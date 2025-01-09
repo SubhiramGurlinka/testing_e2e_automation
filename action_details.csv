@@ -1,0 +1,3 @@
+Name,ID,Status,computer_name,fixlet_deployed_time,Exit_code,start_time,end_time,final_status,remarks
+Update: MongoDB v7.0.11 - RedHat / CentOS 8 (x64),3565,Waiting for downloads to be mirrored.,6ebf5a658462,2025-01-08 14:51,,,,failed,Time limit exceeded. something wrong with file caching on the server 
+Update: IBM MQ v9.2.0.28 - RHEL Family,3566,The Fixlet which this action addresses is not relevant on this machine.,a0b85d99bf4b,2025-01-08 14:51,,,,failed,Fixlet is not relevant.
