@@ -1,0 +1,1 @@
+docker build -t  mongodb_v7.0:rhel8 .
