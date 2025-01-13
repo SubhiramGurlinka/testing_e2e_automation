@@ -36,6 +36,7 @@ import time
 from docker_details import get_docker_images, check_docker_image_exists, check_docker_container_exists
 from create_containers_helper import get_image_name, create_containers
 from bes_client_check import verify_bes_client_in_container
+from get_bes_conf_details import get_bes_conn_using_config_file
 
 def sanitize_name(name: str, user_id="_e2e") -> str:
     """Sanitize the name for creating Docker container names."""
@@ -95,7 +96,10 @@ def postcheck(df):
 # read the csv file
 df = pd.read_csv('fixlet_list.csv')
 # the below hostname corresponds to the sever ip of the bes server you want the container to report to.
-host_name = "10.115.170.160"
+
+username, password, host_name = get_bes_conn_using_config_file()
+print("hostname is", host_name)
+#host_name = "10.115.170.160"
 # running the prechecks
 print("starting the prechecks...")
 precheck(df)
@@ -106,7 +110,7 @@ new_df = create_containers(df,host_name)
 df.to_csv("containers_details.csv", index=False)
 print("containers sucessfully created")
 print("sleeping for 40 seconds waiting for the installation of bes client to finish.")
-time.sleep(40)
+time.sleep(60)
 # run some post-checks to verify the containers are running and further check if bes client is properly installed
 print("Running some post-checks !!!")
 postcheck(df)
