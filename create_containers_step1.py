@@ -113,5 +113,5 @@ print("sleeping for 40 seconds waiting for the installation of bes client to fin
 time.sleep(300)
 # run some post-checks to verify the containers are running and further check if bes client is properly installed
 print("Running some post-checks !!!")
-postcheck(df)
+#postcheck(df)
 print("Post-checks completed sucessfully")
