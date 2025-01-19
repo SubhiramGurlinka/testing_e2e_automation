@@ -110,7 +110,7 @@ new_df = create_containers(df,host_name)
 df.to_csv("containers_details.csv", index=False)
 print("containers sucessfully created")
 print("sleeping for 40 seconds waiting for the installation of bes client to finish.")
-time.sleep(60)
+time.sleep(300)
 # run some post-checks to verify the containers are running and further check if bes client is properly installed
 print("Running some post-checks !!!")
 postcheck(df)
